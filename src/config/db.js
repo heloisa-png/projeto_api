@@ -1,8 +1,7 @@
 //configurações externas 
-
 //importando 
 
-*//p maiusculo 
+//p maiusculo 
 const {Pool} = require('pg')
 
 require (dotenv).config()
@@ -15,5 +14,7 @@ const pool = new Pool({
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT 
 })
+
+//exportando o pool
  module.exports = pool 
 
