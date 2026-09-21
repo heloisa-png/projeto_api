@@ -14,5 +14,5 @@ const listarProdutos = (req, res) => {
 
 //controler2
 //det de todos os produtos, produtos por id 
-
+askasj
 modules.exports = listarProdutos
