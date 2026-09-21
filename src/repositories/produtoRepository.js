@@ -14,5 +14,7 @@ const getAllprodutosbyID = async ()=>{
     return resultado.rows; 
 };
 
-//exportar a cnstante acima 
-module.exports = {getALLprodutos, getprodutoByID}
+//exportar a constante acima 
+module.exports = {getALLprodutos, getprodutoByID};
+
+module.export= {getAllprodutosbyID, getprodutoByID};
