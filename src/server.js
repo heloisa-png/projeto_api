@@ -1,11 +1,12 @@
 //ligando o servidor 
-
 //puxando a port do env
+
 require('dotenv').config();
-const PORT = process.env.PORT;
 
 //importando o app
-const app = require('./app');   
+
+const app = require('./routes/app');   
+const PORT = process.env.PORT;
 
 //puxando a port acima 
 app.listen(PORT, ()=>{

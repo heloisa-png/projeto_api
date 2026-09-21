@@ -2,8 +2,8 @@
   "name": "projeto_api",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": { 
-    "start":"node --src/server.js",
+  "scripts": {
+    "start": "start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
