@@ -14,5 +14,7 @@ const getprodutosbyID = async (id)=>{
 };
 
 //exportando tudo acima por aqui 
-module.exports = {getALLprodutos, getprodutoByID};
+module.exports = {
+    getALLprodutos,
+     getprodutoByID};
 
