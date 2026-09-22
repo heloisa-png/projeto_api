@@ -8,13 +8,11 @@ const getALLprodutos = ()=>{
 };
 
 //01
-const getAllprodutosbyID = async ()=>{
-    const sql = 'SELECT * FROM produtos by id';
-    const resultado = await pool.query(sql);
-    return resultado.rows; 
+const getprodutosbyID = async (id)=>{
+    const sql = 'SELECT * FROM produtos WHERE id = $1';
+    
 };
 
-//exportar a constante acima 
+//exportando tudo acima por aqui 
 module.exports = {getALLprodutos, getprodutoByID};
 
-module.export= {getAllprodutosbyID, getprodutoByID};

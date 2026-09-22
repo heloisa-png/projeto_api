@@ -9,14 +9,22 @@ const listarProdutos = (req, res) => {
     } catch (erro) {
         console.erro(erro.menssage);
         response.status(500).json(mensagem: 'Erro interno.')
-    }
+    };
 };
 
+
+
+
+
+
+
+
 //controler2
-//det de todos os produtos, produtos por id 
+//det de todos os produtos, produtos por id e criar produtos
 
 // pegar produtos por id
-const GetprodutosPorID = (req, res) => {
+const GetprodutosID = (req, res) => {
+
     try {
 
         const resultado = await ProdutoRepository.getAllprodutosbyID();
@@ -25,8 +33,10 @@ const GetprodutosPorID = (req, res) => {
         //aqui vai pegar o erro
     } catch (erro){
         console.erro(erro.mensage)
-    }
+        response.status(500).json(mensagem: 'Erro interno.')
+
+    };
 
 }
 
-modules.exports = listarProdutos
+module.exports = {getALLProdutos}
