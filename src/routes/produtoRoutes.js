@@ -1,13 +1,9 @@
-
-//ROTAS
 const express = require('express');
-
 const router= express.Router();
-
 const produtoController =  require('../controllers/produtoController');
 
-router.get('/', produtoController.listarProduto);
+router.get('/', produtoController.listarProdutos);
+router.get('/:id', produtoController.GetprodutosID);
+router.post('/', produtoController.criarProduto); 
 
-//3
-
-module.exports = router
+module.exports = router;
