@@ -1,11 +1,11 @@
 const pool = require('../config/db');
 
-const buscarByCPF = (cpf)=>{
+const buscarByCPF = async (cpf)=>{
     const sql = 'SELECT * FROM pessoas WHERE cpf = $1';
-    const resultado = pool.query(sql, [cpf]);
+    const resultado = await pool.query(sql, [cpf]);
     return resultado.rows[0]
 };
 
-module.export = {
+module.exports = {
     buscarByCPF
 };

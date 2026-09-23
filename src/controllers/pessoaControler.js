@@ -1,24 +1,29 @@
-const PessoaRepository = require('../repositories/produtoRepository');
+const PessoaRepository = require('../repositories/pessoaRepository');
 
 //busca por cpf
 const GetpessoasByCPF = async (req, res) => {
     try {
-        const cpf = req.params;
-        const produto = await PessoaRepository.buscarByCPF(cpf);
-        console.log(resultado);
+        const cpf = req.params.cpf;
+        const pessoa = await PessoaRepository.buscarByCPF(cpf);
+        console.log(pessoa);
 
-        if (!produto) {
+        if (!pessoa) {
             return res.status(404).json({ mensagem: 'Produto não encontrado.' });
         };
 
         //aqui vai pegar o erro
     } catch (erro) {
         console.erro(erro.mensage)
-        response.status(500).json({ mensagem: 'Erro interno.' })
+        
+        return res.status(500).json({
+            mensagem: 'Erro interno.'
+        })
 
     };
 };
 
-module.export = {
+module.exports = {
     GetpessoasByCPF
 };
+
+//atualizar
