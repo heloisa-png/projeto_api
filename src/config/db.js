@@ -2,9 +2,9 @@
 //importando 
 
 //p maiusculo 
-const {Pool} = require('pg')
+const {Pool} = require('pg');
 
-require (dotenv).config()
+require('dotenv').config();
 
 //acesso as variaveis do .env/ configurações do banco 
 const pool = new Pool({

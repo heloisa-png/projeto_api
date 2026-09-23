@@ -13,7 +13,6 @@ const GetpessoasByCPF = async (req, res) => {
 
         return res.json(pessoa);
 
-        //aqui vai pegar o erro
     } catch (erro) {
         console.erro(erro.mensage)
         
@@ -28,4 +27,5 @@ module.exports = {
     GetpessoasByCPF
 };
 
-//atualizar
+
+//

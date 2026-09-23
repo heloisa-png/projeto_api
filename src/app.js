@@ -1,6 +1,6 @@
 //ele pega da pasta node_modulos
 //importações
-const express = require('express'):
+const express = require('express');
 const cors = require('cors');
 
 const produtosRoutes = require('./routes/produtoRoutes')

@@ -5,7 +5,7 @@ require('dotenv').config();
 
 //importando o app
 
-const app = require('./routes/app');   
+const app = require('./app');   
 const PORT = process.env.PORT;
 
 //puxando a port acima 
