@@ -8,8 +8,10 @@ const GetpessoasByCPF = async (req, res) => {
         console.log(pessoa);
 
         if (!pessoa) {
-            return res.status(404).json({ mensagem: 'Produto não encontrado.' });
+            return res.status(404).json({ mensagem: 'pessoa não encontrada.' });
         };
+
+        return res.json(pessoa);
 
         //aqui vai pegar o erro
     } catch (erro) {
