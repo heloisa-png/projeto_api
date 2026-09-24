@@ -7,7 +7,7 @@ const produtosRoutes = require('./routes/produtoRoutes')
 const pessoasRoutes = require('./routes/pessoaRoutes');
 
 
-//monitora as rotas 
+//rotas 
 const app = express();
 
 app.use(express.json());

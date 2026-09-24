@@ -9,7 +9,7 @@ const GetpessoasByCPF = async (req, res) => {
 
         if (!pessoa) {
             return res.status(404).json({ mensagem: 'pessoa não encontrada.' });
-        };
+        }
 
         return res.json(pessoa);
 
@@ -23,9 +23,10 @@ const GetpessoasByCPF = async (req, res) => {
     };
 };
 
+//verificar se o id/cpf existe e de campo obrigatorio 
+//buscar por id 
+//pedidos por pessoa
+
 module.exports = {
     GetpessoasByCPF
 };
-
-
-//

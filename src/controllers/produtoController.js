@@ -7,9 +7,9 @@ const listarProdutos = async (req, res) => {
     try {
         const resultado = await ProdutoRepository.getALLprodutos();
         console.log(resultado);
-        responde.json(resultado);
+        res.json(resultado);
     } catch (erro) {
-        console.erro(erro.menssage);
+        console.error(erro.menssage);
         response.status(500).json({ mensagem: 'Erro interno.' });
     };
 
@@ -27,7 +27,6 @@ const GetprodutosID = async (req, res) => {
             return res.status(404).json({ mensagem: 'Produto não encontrado.' });
         };
 
-        //aqui vai pegar o erro
     } catch (erro) {
         console.erro(erro.mensage)
         response.status(500).json({ mensagem: 'Erro interno.' })
