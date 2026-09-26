@@ -1,7 +1,8 @@
 const ProdutoRepository = require('../repositories/produtoRepository');
-//controler2
 
-//listar produtos
+//Pega do repositorio e captura os erros e mostra as mensagens
+
+//listar todos produtos
 const listarProdutos = async (req, res) => {
 
     try {
@@ -51,6 +52,8 @@ const criarProduto = async (req, res) => {
         return res.status(500).json({ mensagem: 'Erro interno ao cadastrar produto.' });
     }
 };
+
+
 
 module.exports = {
     listarProdutos,

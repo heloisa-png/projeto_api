@@ -1,13 +1,16 @@
 //importação com o banco
 const pool = require('../config/db');
 
+
+
+//Filtra oq quero pegar do banco
+
 const getALLprodutos = async ()=>{
     const sql = 'SELECT * FROM produtos';
     const resultado = await pool.query(sql);
     return resultado.rows; 
 };
 
-//01
 const getprodutosbyID = async (id)=>{
     const sql = 'SELECT * FROM produtos WHERE id = $1';
     const resultado = pool.query(sql, [id]);

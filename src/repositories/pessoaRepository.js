@@ -6,6 +6,13 @@ const buscarByCPF = async (cpf)=>{
     return resultado.rows[0]
 };
 
+const getALLpessoas = async ()=>{
+    const sql = 'SELECT * FROM pessoas';
+    const resultado = await pool.query(sql);
+    return resultado.rows; 
+};
+
+
 module.exports = {
     buscarByCPF
 };
