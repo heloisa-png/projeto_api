@@ -33,25 +33,31 @@ const listarPessoas = async (req, res) => {
         res.json(resultado);
     } catch (erro) {
         console.error(erro.menssage);
-        response.status(500).json({ mensagem: 'Erro interno.' });
+        res.status(500).json({ mensagem: 'Erro interno.' });
     };
 
 };
 
-//Falta perminar 
 const ADDpessoa = async (req, res) => {
     try {
-        const { nome, preco, descricao } = req.body;
+        const { nome, email, telefone , cpf, senha } = req.body;
 
-        if (!nome || preco === undefined) {
-            return response.status(400).json({ mensagem: 'Nome e preço obrigatórios.' });
+        if (!nome || !email || !telefone || !cpf || !senha) {
+            return res.status(400).json({ mensagem: 'Campos obrigatórios!' });
         }
 
-        const novoProduto = await ProdutoRepository.getALLpessoas(nome, preco, descricao);
-        return res.status(201).json(novoProduto);
+        const NovaPessoa = await PessoaRepository.getALLpessoas({
+            nome,
+            email,
+            telefone,
+            cpf,
+            senha
+        });
+        return res.status(201).json(NovaPessoa);
+
     } catch (erro) {
         console.error(erro.message);
-        return res.status(500).json({ mensagem: 'Erro interno ao cadastrar produto.' });
+        return res.status(500).json({ mensagem: 'Erro interno ao fazer o login.' });
     }
 };
 

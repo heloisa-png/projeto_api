@@ -6,13 +6,32 @@ const buscarByCPF = async (cpf)=>{
     return resultado.rows[0]
 };
 
-const getALLpessoas = async ()=>{
-    const sql = 'SELECT * FROM pessoas';
-    const resultado = await pool.query(sql);
-    return resultado.rows; 
+const adicionarPessoa = async ()=>{
+    const sql = `INSER TINTO pessoas (nome, email, telefone, cpf, senha)
+    VALUES ($1, $2, $3, $4, $5)
+    RETURNING  * ` ;
+
+    const resultado = await pool.query(sql [
+        dados.nome, 
+        dados.email,
+        dados.telefone,
+        dados.cpf,
+        dados.senha
+    ]);
+    return resultado.rows[0]; 
 };
 
+const getALLpessoas = async () => {
+
+    const sql = 'SELECT * FROM pessoas';
+
+    const resultado = await pool.query(sql);
+
+    return resultado.rows;
+};
 
 module.exports = {
-    buscarByCPF
+    buscarByCPF,
+    getALLpessoas,
+    adicionarPessoa
 };
