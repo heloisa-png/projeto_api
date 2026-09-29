@@ -3,7 +3,7 @@ const ProdutoRepository = require('../repositories/produtoRepository');
 //Pega do repositorio e captura os erros e mostra as mensagens
 
 //listar todos produtos
-const listarProdutos = async (req, res) => {
+/*const listarProdutos = async (req, res) => {
 
     try {
         const resultado = await ProdutoRepository.getALLprodutos();
@@ -14,7 +14,31 @@ const listarProdutos = async (req, res) => {
         response.status(500).json({ mensagem: 'Erro interno.' });
     };
 
+};*/
+
+
+const listarProdutos = async (req, res) => {
+    try {
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 10;
+        
+        const offset = (page - 1) * limit;
+
+        const produtos = await ProdutoRepository.getAllProdutos(limit, offset);
+        
+        res.json({
+            paginaAtual: page,
+            itensPorPagina: limit,
+            quantidadeRetornada: produtos.length,
+            dados: produtos
+        });
+    } catch (erro) {
+        console.error(erro.message);
+        res.status(500).json({ mensagem: 'Erro interno' });
+    }
 };
+
+
 
 // pegar produtos por id
 const GetprodutosID = async (req, res) => {
@@ -52,6 +76,8 @@ const criarProduto = async (req, res) => {
         return res.status(500).json({ mensagem: 'Erro interno ao cadastrar produto.' });
     }
 };
+
+
 
 
 

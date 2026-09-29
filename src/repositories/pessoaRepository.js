@@ -21,11 +21,11 @@ const adicionarPessoa = async ()=>{
     return resultado.rows[0]; 
 };
 
-const getALLpessoas = async () => {
+const getALLpessoas = async (limit, offset) => {
 
     const sql = 'SELECT * FROM pessoas';
 
-    const resultado = await pool.query(sql);
+    const resultado = await pool.query(sql, [limit, offset]);
 
     return resultado.rows;
 };
