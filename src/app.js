@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const produtosRoutes = require('./routes/produtoRoutes')
 const pessoasRoutes = require('./routes/pessoaRoutes');
+const pedidosRoutes = require('./routes/pedidoRoutes');
 
 
 //rotas 
@@ -15,6 +16,7 @@ app.use(cors());
 
 app.use('/produtos',produtosRoutes);
 app.use('/pessoas',pessoasRoutes);
+app.use('/pedidos', pedidosRoutes);
 
 
 module.exports = app;
