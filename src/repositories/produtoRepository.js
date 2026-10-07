@@ -1,6 +1,8 @@
 //importação com o banco
 const pool = require('../config/db');
 
+//ARRUMAR
+
 //pegar *produtos
 const getALLprodutos = async (limit, offset)=>{
     const sql = 'SELECT * FROM produtos ORDER BY id LIMIT $1 OFFSET $2';
@@ -24,7 +26,7 @@ const createProduto = async (Nome, preco, descricao) =>{
 
 //atualizar  
 const upidateProduto = async (id, nome, preco, descricao) =>{
-    const sql = 'UPDATE produtos SET $1, preco, $2, descricao = $3, where  id $4 =RETURNINNG * '
+    const sql = `UPDATE produtos SET $1= preco, $2= descricao, WHERE id= 4$ RETURNING * `
     const  resultado = await pool.query(sql, [nome, preco, id, descricao])
     return resultado
 };
